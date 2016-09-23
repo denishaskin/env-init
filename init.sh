@@ -73,11 +73,11 @@ echo '*** install homebrew ***'
 ruby -e "$(curl -#fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 
-echo '*** install brew cask ***'
-brew install caskroom/cask/brew-cask
-
 echo '*** install git ***'
 brew install git
+
+echo '*** install gnupg2 ***'
+brew install gnupg2
 
 echo '*** install heroku ***'
 brew install heroku
@@ -88,17 +88,20 @@ brew install heroku-toolbelt
 echo '*** install node/npm ***'
 brew install node
 
-echo '*** install nodemon ***'
-npm install -g nodemon
-
 echo '*** install openssl ***'
 brew install openssl
 
 echo '*** install postgresql ***'
 brew install postgresql
 
+echo '*** set postgresql to run at startup ***'
+brew services start postgresql
+
 echo '*** install redis ***'
 brew install redis
+
+echo '*** set redis to run at startup ***'
+brew services start redis
 
 echo '*** install s3cmd ***'
 brew install s3cmd
@@ -119,7 +122,7 @@ echo '*** change default cask install location to ~/Applications ***'
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 echo '*** install alfred ***'
-brew cast install alfred
+brew cask install alfred
 
 echo '*** install anvil ***'
 brew cask install anvil
@@ -159,7 +162,7 @@ brew cask install vlc
 
 echo '*** install sublime text 3 ***'
 brew tap caskroom/versions
-brew cask install sublime-text3
+brew cask install sublime-text
 
 echo '*** cleaning up cask installs ***'
 brew cask cleanup
@@ -180,10 +183,6 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 # Set standby delay to 12 hours
 echo '*** set standby delay ***'
 sudo pmset -a standbydelay 43200
-
-# Link Cask Apps to Alfred
-echo '*** link cask apps to alfred ***'
-brew cask alfred link
 
 # Disable the warning before emptying the Trash
 echo '*** disable warning before emptying the trash ***'
@@ -301,7 +300,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # enable snap to grid for desktop and icon view
 echo '*** enable snap to grid ***'
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 # set column view as default
@@ -360,16 +358,12 @@ sudo tmutil disablelocal
 ### Sublime Text Settings ###
 #############################
 
-# create symlink to sublime
-echo '*** create symlink to sublime text ***'
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
-
 # open sublime to initialize filepaths
 echo '*** open sublime to initialize filepaths ***'
 subl
 
 # set vim as default text editor in git
-echo '*** set sublime text as default text editor in git ***'
+echo '*** set vim as default text editor in git ***'
 git config --global core.editor vim
 
 #set sublime as default text editor os-wide
@@ -398,14 +392,8 @@ curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/su
 echo '*** set vim config ***'
 curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/vimrc > ~/.vimrc
 
-echo '*** install ohmyzsh ***'
-sh -c "$(curl -#fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 echo '*** set ohmyzsh config ***'
 curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/zshrc > ~/.zshrc
-
-echo '*** set ohmyzsh theme ***'
-curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/genzume.zsh-theme > ~/.oh-my-zsh/themes/genzume.zsh-theme
 
 echo '*** set tmux config ***'
 curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/tmux.conf > ~/.tmux.conf
@@ -419,3 +407,10 @@ ssh-keygen -t rsa -b 4096 -C "$user_email"
 
 echo '*** adding generated key to agent ***'
 ssh-add ~/.ssh/id_rsa
+
+echo '*** install ohmyzsh ***'
+sh -c "$(curl -#fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo '*** set ohmyzsh theme ***'
+curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/genzume.zsh-theme > ~/.oh-my-zsh/themes/genzume.zsh-theme
+
