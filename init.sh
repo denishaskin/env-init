@@ -121,6 +121,9 @@ brew install wget
 echo '*** change default cask install location to ~/Applications ***'
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+echo '*** install 1password ***'
+brew cask install 1password
+
 echo '*** install alfred ***'
 brew cask install alfred
 
