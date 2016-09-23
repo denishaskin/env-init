@@ -11,10 +11,10 @@ user_email=' '
 echo -n "What would you like your computer to be known as on the network? ex:Joe's Macbook  "
 read computer_name
 
-echo -n 'What is your name? (This is just for git)  '
+echo -n 'What is your git username?  '
 read user_name
 
-echo -n 'What is your email address? (Again, just for git)  '
+echo -n 'What is your git email address?  '
 read user_email
 
 #########################
@@ -76,89 +76,86 @@ echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 echo '*** install brew cask ***'
 brew install caskroom/cask/brew-cask
 
+echo '*** install git ***'
+brew install git
+
+echo '*** install heroku ***'
+brew install heroku
+
+echo '*** install heroku-toolbelt ***'
+brew install heroku-toolbelt
+
 echo '*** install node/npm ***'
 brew install node
-
-echo '*** install mongo ***'
-brew install mongo
-
-echo '*** install tree ***'
-brew install tree
-
-echo '*** install wget ***'
-brew install wget
 
 echo '*** install nodemon ***'
 npm install -g nodemon
 
-echo '*** install git ***'
-brew install git
+echo '*** install openssl ***'
+brew install openssl
+
+echo '*** install postgresql ***'
+brew install postgresql
+
+echo '*** install redis ***'
+brew install redis
+
+echo '*** install s3cmd ***'
+brew install s3cmd
+
+echo '*** install tmux ***'
+brew install tmux
+
+echo '*** install tree ***'
+brew install tree
+
+echo '*** install vim ***'
+brew install vim
+
+echo '*** install wget ***'
+brew install wget
 
 echo '*** change default cask install location to ~/Applications ***'
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+echo '*** install alfred ***'
+brew cast install alfred
+
+echo '*** install anvil ***'
+brew cask install anvil
+
+echo '*** install charles ***'
+brew cask install charles
+
+echo '*** install dash ***'
+brew cask install dash
+
 echo '*** install google chrome ***'
 brew cask install google-chrome
-
-echo '*** install google drive ***'
-brew cask install google-drive
-
-echo '*** install dropbox ***'
-brew cask install dropbox
-
-echo '*** install transmission ***'
-brew cask install transmission
-
-echo '*** iterm2 ***'
-brew cask install iterm2
-
-echo '*** install slack ***'
-brew cask install slack
-
-echo '*** install skype ***'
-brew cask install skype
-
-echo '*** install steam ***'
-brew cask install steam
-
-echo '*** install league of legends ***'
-brew cask install league-of-legends
-
-echo '*** install open emu ***'
-brew cask install openemu
-
-echo '*** install alfred ***'
-brew cask install alfred
 
 echo '*** install flux ***'
 brew cask install flux
 
-echo '*** install hyperswitch ***'
-brew cask install hyperswitch
+echo '*** install iterm2 ***'
+brew cask install iterm2
 
-echo '*** install keka ***'
-brew cask install keka
+echo '*** install mou ***'
+brew cask install mou
 
-echo '*** install scroll reverser ***'
-brew cask install scroll-reverser
+echo '*** install slack ***'
+brew cask install slack
 
-echo '*** install razer synapse ***'
-brew cask install razer-synapse
+echo '*** install sketchup ***'
+brew cask install sketchup
 
-echo '*** install spotify ***'
-brew cask install spotify
+echo '*** install skype ***'
+brew cask install skype
 
-echo '*** install spotify notifications ***'
-brew cask install spotify-notifications
-
-echo '*** install spotifree ***'
-brew cask install spotifree
+echo '*** install synergy ***'
+brew cask install synergy
 
 echo '*** install vlc ***'
 brew cask install vlc
-
-echo '*** install cakebrew ***'
-brew cask install cakebrew
 
 echo '*** install sublime text 3 ***'
 brew tap caskroom/versions
@@ -166,9 +163,6 @@ brew cask install sublime-text3
 
 echo '*** cleaning up cask installs ***'
 brew cask cleanup
-
-echo '*** install quick-look plugins ***'
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook
 
 
 
@@ -183,9 +177,9 @@ sudo scutil --set HostName $computer_name
 sudo scutil --set LocalHostName $computer_name
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $computer_name
 
-# Set standby delay to 24 hours
+# Set standby delay to 12 hours
 echo '*** set standby delay ***'
-sudo pmset -a standbydelay 86400
+sudo pmset -a standbydelay 43200
 
 # Link Cask Apps to Alfred
 echo '*** link cask apps to alfred ***'
@@ -198,11 +192,6 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Show the ~/Library folder
 echo '*** show the ~/Library folder ***'
 chflags nohidden ~/Library
-
-# Remove Dropbox’s green checkmark icons in Finder
-echo '*** remove the dropbox green checkmark from icons ***'
-file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
-[ -e "${file}" ] && mv -f "${file}" "${file}.bak"
 
 # Speed up Mission Control animations
 echo '*** speed up mission control animations ***'
@@ -219,14 +208,6 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 # Make Dock icons of hidden applications translucent
 echo '*** make hidden app icons translucent ***'
 defaults write com.apple.dock showhidden -bool true
-
-# Disable the Launchpad gesture (pinch with thumb and three fingers)
-echo '*** disable launchpad gesture ***'
-defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
-
-# Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
-echo '*** add the keyboard shortcut ⌘ + Enter to send an email ***'
-defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
 
 # Disable prompt when quitting iterm2
 echo '*** Disable prompt when quitting iterm2 ***'
@@ -276,14 +257,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 echo '*** prevent photos from opening when instering drives ***'
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-# Disable attachment previews in Mail.app
-echo '*** disable attachment previews in Mail.app'
-defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes
-
-# sets clock to 24-hour mode
-echo '*** set clock to 24-hour mode ***'
-defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
-
 # disable hibernate
 echo '*** disable hibernate ***'
 sudo pmset -a hibernatemode 0
@@ -300,10 +273,6 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 echo '*** disable special key press-and-hold ***'
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-# increase key repeat rate
-echo '*** increase key repeat rate ***'
-defaults write NSGlobalDomain KeyRepeat -int 0
-
 # disable auto-brightness on keyboard and screen
 echo '*** disable auto-brightness ***'
 sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Keyboard Enabled" -bool false
@@ -312,10 +281,6 @@ sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Aut
 # create folder for screenshots in documents
 echo '*** create folder for screenshots in documents ***'
 defaults write com.apple.screencapture location -string "${HOME}/Documents/screenshots"
-
-# enable hidpi mode
-echo '*** enable hidpi ***'
-sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 # enable font rendering on non-apple displays
 echo '*** enable font rendering on non-apple displays ***'
@@ -351,10 +316,6 @@ defaults write com.apple.dock tilesize -int 48
 echo '*** disable focus ring ***'
 defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 
-# reformat copying email addresses
-echo '*** reformat copying email addresses in mail.app ***'
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-
 # show battery percentage
 echo '*** show battery percentage ***'
 defaults write com.apple.menuextra.battery ShowPercent -string "NO"
@@ -377,7 +338,7 @@ defaults write com.apple.CrashReporter UseUNC 1
 
 # create global .gitignore
 echo '*** create global .gitignore ***'
-curl -# https://raw.githubusercontent.com/theavish/env-init/master/assets/gitignore.txt > ~/.gitignore
+curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/gitignore.txt > ~/.gitignore
 
 # set git user info and credentials
 echo '*** set git user info and credentials ***'
@@ -396,51 +357,20 @@ sudo tmutil disablelocal
 
 
 #############################
-### Transmission Settings ###
-#############################
-
-# setup folder for incomplete torrents
-echo '*** set up folder for incomplete torrents ***'
-mkdir -p ~/Downloads/Incomplete
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
-
-# hide donate message
-echo '*** hide transmission donate message ***'
-defaults write org.m0k.transmission WarningDonate -bool false
-
-# hide legal warning
-echo '*** hide transmission legal warning ***'
-defaults write org.m0k.transmission WarningLegal -bool false
-
-# auto resize window
-echo '*** auto resize transmission window ***'
-defaults write org.m0k.transmission AutoSize -bool true
-
-# setting block-list
-echo '*** set up transmission block-list ***'
-defaults write org.m0k.transmission EncryptionRequire -bool true
-defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
-defaults write org.m0k.transmission BlocklistNew -bool true
-defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
-
-
-
-#############################
 ### Sublime Text Settings ###
 #############################
 
 # create symlink to sublime
 echo '*** create symlink to sublime text ***'
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
 # open sublime to initialize filepaths
 echo '*** open sublime to initialize filepaths ***'
 subl
 
-# set sublime as default text editor in git
+# set vim as default text editor in git
 echo '*** set sublime text as default text editor in git ***'
-git config --global core.editor "subl -n -w"
+git config --global core.editor vim
 
 #set sublime as default text editor os-wide
 echo '*** set sublime text as default text editor os-wide ***'
@@ -449,7 +379,7 @@ defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandle
 
 # set sublime packages
 echo '*** set sublime packages ***'
-curl -# https://raw.githubusercontent.com/theavish/env-init/master/assets/sublime-packages.txt > /Users/$USER/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
+curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/sublime-packages > /Users/$USER/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
 
 # download sublime package manager
 echo '*** download sublime package manager ***'
@@ -457,7 +387,7 @@ curl -# https://sublime.wbond.net/Package%20Control.sublime-package > /Users/$US
 
 # set sublime settings
 echo '*** set sublime preferences ***'
-curl -# https://raw.githubusercontent.com/theavish/env-init/master/assets/sublime-preferences.txt > /Users/$USER/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings
+curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/sublime-preferences > /Users/$USER/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings
 
 
 
@@ -465,5 +395,27 @@ curl -# https://raw.githubusercontent.com/theavish/env-init/master/assets/sublim
 ### install ohmyzsh ###
 #######################
 
+echo '*** set vim config ***'
+curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/vimrc > ~/.vimrc
+
 echo '*** install ohmyzsh ***'
 sh -c "$(curl -#fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo '*** set ohmyzsh config ***'
+curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/zshrc > ~/.zshrc
+
+echo '*** set ohmyzsh theme ***'
+curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/genzume.zsh-theme > ~/.oh-my-zsh/themes/genzume.zsh-theme
+
+echo '*** set tmux config ***'
+curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/tmux.conf > ~/.tmux.conf
+
+echo '*** install rvm ***'
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -sSL https://get.rvm.io | bash -s stable --rails
+
+echo '*** generate ssh key ***'
+ssh-keygen -t rsa -b 4096 -C "$user_email"
+
+echo '*** adding generated key to agent ***'
+ssh-add ~/.ssh/id_rsa

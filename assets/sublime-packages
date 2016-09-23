@@ -1,0 +1,18 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+	  "BracketHighlighter",
+		"CoffeeScript",
+		"Elixir",
+		"EmberScript",
+		"Handlebars",
+		"HTMLAttributes",
+		"HTML-CSS-JS Prettify",
+		"Package Control",
+		"Vintage Surround"
+	]
+}

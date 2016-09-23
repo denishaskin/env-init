@@ -1,0 +1,33 @@
+{
+  "always_prompt_for_file_reload": false,
+  "auto_close_tags": true,
+  "auto_indent": true,
+  "binary_file_patterns":
+  [
+    "*.jpg",
+    "*.jpeg",
+    "*.png",
+    "*.gif",
+    "*.ttf",
+    "*.tga",
+    "*.dds",
+    "*.ico",
+    "*.eot",
+    "*.pdf",
+    "*.swf",
+    "*.jar",
+    "*.zip"
+  ],
+  "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+  "create_window_at_startup": true,
+  "default_encoding": "UTF-8",
+  "default_line_ending": "system",
+  "detect_indentation": true,
+  "ensure_newline_at_eof_on_save": true,
+	"font_size": 16.0,
+  "ignored_packages": [ ],
+  "scroll_past_end": true,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "use_tab_stops": true
+}
