@@ -10,20 +10,47 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/vim-snippets'
 
-Bundle 'garbas/vim-snipmate'     " Snippets for for expression autocomplete
-Bundle 'tpope/vim-fugitive'      " Git tools
-Bundle 'gmarik/vundle'           " Dependency management
-Bundle 'tpope/vim-rails'         " Rails
-Bundle 'rizzatti/dash.vim'       " Dash documentation
-Bundle 'tomtom/tcomment_vim'     " Commenting and uncommenting
-Bundle 'vim-ruby/vim-ruby'       " Vim Ruby
-Bundle 'tpope/vim-surround'      " Code surround
-" Bundle 'jiangmiao/auto-pairs'  " Autogenerate pairs for brackets
-Bundle 'ervandew/supertab'       " Tab completions
-Bundle 'kien/ctrlp.vim'          " Fuzzy finder for vim (CTRL + P)
-Bundle 'scrooloose/nerdtree'     " Navigation tree
-Bundle 'plasticboy/vim-markdown' " Markdown syntax highlighting
-Bundle 'mustache/vim-mustache-handlebars' " Mustache Handlebars syntax highlighting
+" Snippets for for expression autocomplete
+Bundle 'garbas/vim-snipmate'
+
+" Git tools
+Bundle 'tpope/vim-fugitive'
+
+" Dependency management
+Bundle 'gmarik/vundle'
+
+" Rails
+Bundle 'tpope/vim-rails'
+
+" Dash documentation
+Bundle 'rizzatti/dash.vim'
+
+" Commenting and uncommenting
+Bundle 'tomtom/tcomment_vim'
+
+" Vim Ruby
+Bundle 'vim-ruby/vim-ruby'
+
+" Code surround
+Bundle 'tpope/vim-surround'
+
+" Autogenerate pairs for brackets
+" Bundle 'jiangmiao/auto-pairs'
+
+" Tab completions
+Bundle 'ervandew/supertab'
+
+" Fuzzy finder for vim (CTRL + P)
+Bundle 'kien/ctrlp.vim'
+
+" Navigation tree
+Bundle 'scrooloose/nerdtree'
+
+" Markdown syntax highlighting
+Bundle 'plasticboy/vim-markdown'
+
+" Mustache Handlebars syntax highlighting
+Bundle 'mustache/vim-mustache-handlebars'
 
 set autoindent   " Use autoindenting
 set rnu          " Use relative line numbers
@@ -68,4 +95,3 @@ augroup END
 " Show trailing whitespace and spaces before a tab
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-
