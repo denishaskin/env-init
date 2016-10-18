@@ -72,6 +72,9 @@ nmap <leader>q :NERDTreeToggle<CR>
 " Set tab stops and shift width
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 
+" Set backspace markers
+set backspace=indent,eol,start
+
 " Tab completion
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
