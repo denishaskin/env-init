@@ -54,6 +54,7 @@ Bundle 'mustache/vim-mustache-handlebars'
 
 set autoindent   " Use autoindenting
 set rnu          " Use relative line numbers
+set nu           " Show line number for current line
 set hlsearch     " High search areas
 set incsearch    " Search incrementally as you type
 set ignorecase   " Ignore case in the file
