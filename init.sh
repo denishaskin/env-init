@@ -414,6 +414,16 @@ ssh-add ~/.ssh/id_rsa
 echo '*** install ohmyzsh ***'
 sh -c "$(curl -#fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+############################
+### install tmux plugins ###
+############################
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+#########################
+### set ohmyzsh theme ###
+#########################
+
 echo '*** set ohmyzsh theme ***'
 curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/genzume.zsh-theme > ~/.oh-my-zsh/themes/genzume.zsh-theme
 
