@@ -63,7 +63,8 @@ fi
 echo '*** gaining ownership of /usr/local/ ***'
 sudo chmod a+w /usr/local/
 
-
+echo '*** creating code skeleton directory ***'
+mkdir -p $HOME/code/go/src/github.com/tylerferraro
 
 ##############################
 ### Software Installations ###
@@ -72,6 +73,12 @@ sudo chmod a+w /usr/local/
 echo '*** install homebrew ***'
 ruby -e "$(curl -#fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+
+echo '*** install erlang ***'
+brew install erlang
+
+echo '*** install elixir ***'
+brew install elixir
 
 echo '*** install git ***'
 brew install git

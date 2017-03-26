@@ -1,5 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/tylerferraro/.oh-my-zsh
+export GOPATH="$HOME/code/go"
+export PATH="/usr/local/bin:$PATH:$HOME/.rvm/bin:$GOPATH/bin"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
