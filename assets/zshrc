@@ -1,7 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/tylerferraro/.oh-my-zsh
-export GOPATH="$HOME/code/go"
-export PATH="/usr/local/bin:$PATH:$HOME/.rvm/bin:$GOPATH/bin"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -92,10 +90,15 @@ alias ll='ls -ahlG'
 
 alias gist='git status'
 alias lg="git log --pretty=format:'%C(red)%h%Creset %<(80,trunc)%s %Cgreen(%cr) %C(bold blue)<%an>%Creset' -n 50 --abbrev-commit | head -n 10"
-alias mou='open /Applications/Mou.app'
 
 alias be='bundle exec'
 
 export MYSQL_PASSWORD=password
 export TERM=xterm-256color
+
+export GOPATH="$HOME/code/go"
+export PATH="/usr/local/bin:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$GOPATH/bin"
+
 # export PROMPT="%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}local%{$reset_color%}:%{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%} "
