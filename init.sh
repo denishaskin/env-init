@@ -161,6 +161,29 @@ brew cask install slack
 echo '*** install sketchup ***'
 brew cask install sketchup
 
+echo '*** install evernote ***'
+brew cask install evernote
+
+echo '*** install skitch ***'
+brew cask install skitch
+
+echo '*** install transmission ***'
+brew cask install transmission
+
+echo '*** install plex ***'
+brew cask install plex-media-server
+brew cask install plex-media-player
+
+echo '*** install harvest ***'
+brew cask install harvest
+
+echo '*** install postman ***'
+brew cask install postman
+
+echo '*** install meld ***'
+brew cask install meld
+
+
 #echo '*** install skype ***'
 #brew cask install skype
 
@@ -434,3 +457,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo '*** set ohmyzsh theme ***'
 curl -# https://raw.githubusercontent.com/denishaskin/env-init/master/assets/genzume.zsh-theme > ~/.oh-my-zsh/themes/genzume.zsh-theme
 
+# TODO
+# todoist
+# remap Control-Shift-Down to not be Mission Control, or whatever it is
+# My .gitconfig changes
