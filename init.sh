@@ -60,8 +60,8 @@ fi
 ### Change ownership of /usr/local/ ###
 #######################################
 
-echo '*** gaining ownership of /usr/local/ ***'
-sudo chmod a+w /usr/local/
+#echo '*** gaining ownership of /usr/local/ ***'
+#sudo chmod a+w /usr/local/
 
 # echo '*** creating code skeleton directory ***'
 # mkdir -p $HOME/code/go/src/github.com/tylerferraro
