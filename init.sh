@@ -63,8 +63,8 @@ fi
 echo '*** gaining ownership of /usr/local/ ***'
 sudo chmod a+w /usr/local/
 
-echo '*** creating code skeleton directory ***'
-mkdir -p $HOME/code/go/src/github.com/tylerferraro
+# echo '*** creating code skeleton directory ***'
+# mkdir -p $HOME/code/go/src/github.com/tylerferraro
 
 ##############################
 ### Software Installations ###
@@ -74,17 +74,17 @@ echo '*** install homebrew ***'
 ruby -e "$(curl -#fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 
-echo '*** install erlang ***'
-brew install erlang
+#echo '*** install erlang ***'
+#brew install erlang
 
-echo '*** install elixir ***'
-brew install elixir
+#echo '*** install elixir ***'
+#brew install elixir
 
 echo '*** install git ***'
 brew install git
 
-echo '*** install gnupg2 ***'
-brew install gnupg2
+#echo '*** install gnupg2 ***'
+#brew install gnupg2
 
 echo '*** install heroku ***'
 brew install heroku
@@ -98,11 +98,11 @@ brew install node
 echo '*** install openssl ***'
 brew install openssl
 
-echo '*** install postgresql ***'
-brew install postgresql
+#echo '*** install postgresql ***'
+#brew install postgresql
 
-echo '*** set postgresql to run at startup ***'
-brew services start postgresql
+#echo '*** set postgresql to run at startup ***'
+#brew services start postgresql
 
 echo '*** install redis ***'
 brew install redis
@@ -119,8 +119,8 @@ brew install tmux
 echo '*** install tree ***'
 brew install tree
 
-echo '*** install vim ***'
-brew install vim
+#echo '*** install vim ***'
+#brew install vim
 
 echo '*** install wget ***'
 brew install wget
@@ -161,8 +161,8 @@ brew cask install slack
 echo '*** install sketchup ***'
 brew cask install sketchup
 
-echo '*** install skype ***'
-brew cask install skype
+#echo '*** install skype ***'
+#brew cask install skype
 
 echo '*** install synergy ***'
 brew cask install synergy
@@ -211,8 +211,8 @@ echo '*** stop time machine from asking about new drives ***'
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable Dashboard
-echo '*** disable dashboard ***'
-defaults write com.apple.dashboard mcx-disabled -bool true
+#echo '*** disable dashboard ***'
+#defaults write com.apple.dashboard mcx-disabled -bool true
 
 # Make Dock icons of hidden applications translucent
 echo '*** make hidden app icons translucent ***'
@@ -227,12 +227,12 @@ echo '*** stop automatically rearranging spaces based on time ***'
 defaults write com.apple.dock mru-spaces -bool false
 
 # Menu bar: hide the Time Machine and User icons
-echo '*** hide the time machine and user icons from the menu bar ***'
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-  defaults write "${domain}" dontAutoLoad -array \
-    "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-    "/System/Library/CoreServices/Menu Extras/User.menu"
-done
+#echo '*** hide the time machine and user icons from the menu bar ***'
+#for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+#  defaults write "${domain}" dontAutoLoad -array \
+#    "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+#    "/System/Library/CoreServices/Menu Extras/User.menu"
+#done
 
 # Set sidebar icon size to medium
 echo '*** set sidebar icons in finder to medium size ***'
@@ -263,8 +263,8 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # prevent Photos from opening when inserting external media
-echo '*** prevent photos from opening when instering drives ***'
-defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+#echo '*** prevent photos from opening when instering drives ***'
+#defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 # disable hibernate
 echo '*** disable hibernate ***'
@@ -283,9 +283,9 @@ echo '*** disable special key press-and-hold ***'
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # disable auto-brightness on keyboard and screen
-echo '*** disable auto-brightness ***'
-sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Keyboard Enabled" -bool false
-sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Display Enabled" -bool false
+#echo '*** disable auto-brightness ***'
+#sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Keyboard Enabled" -bool false
+#sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Display Enabled" -bool false
 
 # create folder for screenshots in documents
 echo '*** create folder for screenshots in documents ***'
@@ -326,7 +326,7 @@ defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 
 # show battery percentage
 echo '*** show battery percentage ***'
-defaults write com.apple.menuextra.battery ShowPercent -string "NO"
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
 #disable gatekeeper
 echo '*** disable gatekeeper ***'
@@ -346,7 +346,7 @@ defaults write com.apple.CrashReporter UseUNC 1
 
 # create global .gitignore
 echo '*** create global .gitignore ***'
-curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/gitignore.txt > ~/.gitignore
+curl -# https://raw.githubusercontent.com/denishaskin/env-init/master/assets/gitignore.txt > ~/.gitignore
 
 # set git user info and credentials
 echo '*** set git user info and credentials ***'
@@ -374,7 +374,7 @@ subl
 
 # set vim as default text editor in git
 echo '*** set vim as default text editor in git ***'
-git config --global core.editor vim
+git config --global core.editor subl -nw
 
 #set sublime as default text editor os-wide
 echo '*** set sublime text as default text editor os-wide ***'
@@ -383,7 +383,7 @@ defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandle
 
 # set sublime packages
 echo '*** set sublime packages ***'
-curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/sublime-packages > /Users/$USER/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
+curl -# https://raw.githubusercontent.com/denishaskin/env-init/master/assets/sublime-packages > /Users/$USER/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
 
 # download sublime package manager
 echo '*** download sublime package manager ***'
@@ -391,7 +391,7 @@ curl -# https://sublime.wbond.net/Package%20Control.sublime-package > /Users/$US
 
 # set sublime settings
 echo '*** set sublime preferences ***'
-curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/sublime-preferences > /Users/$USER/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings
+curl -# https://raw.githubusercontent.com/denishaskin/env-init/master/assets/sublime-preferences > /Users/$USER/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings
 
 
 
@@ -399,14 +399,14 @@ curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/su
 ### install ohmyzsh ###
 #######################
 
-echo '*** set vim config ***'
-curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/vimrc > ~/.vimrc
+#echo '*** set vim config ***'
+#curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/vimrc > ~/.vimrc
 
 echo '*** set ohmyzsh config ***'
-curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/zshrc > ~/.zshrc
+curl -# https://raw.githubusercontent.com/denishaskin/env-init/master/assets/zshrc > ~/.zshrc
 
 echo '*** set tmux config ***'
-curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/tmux.conf > ~/.tmux.conf
+curl -# https://raw.githubusercontent.com/denishaskin/env-init/master/assets/tmux.conf > ~/.tmux.conf
 
 echo '*** install rvm ***'
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -432,5 +432,5 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #########################
 
 echo '*** set ohmyzsh theme ***'
-curl -# https://raw.githubusercontent.com/tylerferraro/env-init/master/assets/genzume.zsh-theme > ~/.oh-my-zsh/themes/genzume.zsh-theme
+curl -# https://raw.githubusercontent.com/denishaskin/env-init/master/assets/genzume.zsh-theme > ~/.oh-my-zsh/themes/genzume.zsh-theme
 
