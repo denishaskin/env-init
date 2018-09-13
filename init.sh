@@ -98,8 +98,8 @@ brew install node
 echo '*** install openssl ***'
 brew install openssl
 
-#echo '*** install postgresql ***'
-#brew install postgresql
+echo '*** install postgis ***'
+brew install postgis
 
 #echo '*** set postgresql to run at startup ***'
 #brew services start postgresql
@@ -124,6 +124,9 @@ brew install tree
 
 echo '*** install wget ***'
 brew install wget
+
+echo '*** install hub` ***'
+brew install hub
 
 echo '*** change default cask install location to ~/Applications ***'
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
