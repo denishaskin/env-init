@@ -100,8 +100,7 @@ brew install openssl
 
 echo '*** install postgresql ***'
 brew install postgresql
-# brew install postgresql@9.6
-# brew install geos gdal
+# brew install postgis
 
 #echo '*** set postgresql to run at startup ***'
 brew services start postgresql
@@ -133,6 +132,9 @@ brew install imagemagick
 brew install truncate
 brew install git-when-merged
 brew install markdown
+
+echo '*** install hub` ***'
+brew install hub
 
 echo '*** change default cask install location to ~/Applications ***'
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
