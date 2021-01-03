@@ -94,22 +94,23 @@ brew install heroku-toolbelt
 
 echo '*** install node/npm ***'
 brew install node
+brew install nvm
 
 echo '*** install openssl ***'
 brew install openssl
 
-echo '*** install postgresql ***'
+echo '*** install & start postgresql ***'
 brew install postgresql
 # brew install postgis
-
-#echo '*** set postgresql to run at startup ***'
 brew services start postgresql
 
-echo '*** install redis ***'
+echo '*** install & start redis ***'
 brew install redis
-
-echo '*** set redis to run at startup ***'
 brew services start redis
+
+echo '*** install & start influxdb ***'
+brew install influxdb
+brew services start influxdb
 
 echo '*** install s3cmd ***'
 brew install s3cmd
@@ -157,14 +158,14 @@ brew cask install dash
 echo '*** install google chrome ***'
 brew cask install google-chrome
 
-echo '*** install flux ***'
-brew cask install flux
+# echo '*** install flux ***'
+# brew cask install flux
 
-echo '*** install iterm2 ***'
-brew cask install iterm2
+# echo '*** install iterm2 ***'
+# brew cask install iterm2
 
-echo '*** install mou ***'
-brew cask install mou
+# echo '*** install mou ***'
+# brew cask install mou
 
 echo '*** install slack ***'
 brew cask install slack
@@ -191,8 +192,8 @@ brew cask install harvest
 echo '*** install postman ***'
 brew cask install postman
 
-echo '*** install meld ***'
-brew cask install meld
+# echo '*** install meld ***'
+# brew cask install meld
 
 echo '*** install tableplus ***'
 brew cask install tableplus
@@ -201,14 +202,14 @@ brew cask install tableplus
 #echo '*** install skype ***'
 #brew cask install skype
 
-echo '*** install synergy ***'
-brew cask install synergy
+# echo '*** install synergy ***'
+# brew cask install synergy
 
-echo '*** install vlc ***'
-brew cask install vlc
+# echo '*** install vlc ***'
+# brew cask install vlc
 
 echo '*** install sublime text 3 ***'
-brew tap caskroom/versions
+# brew tap caskroom/versions
 brew cask install sublime-text
 
 brew cask install sublime-merge
@@ -219,6 +220,8 @@ brew cask install envkey
 
 brew cask install zoom
 
+brew cask install idagio
+
 echo ""
 echo "****************************"
 echo "NO INSTALLS FOR"
@@ -226,7 +229,6 @@ echo ""
 echo "todoist"
 echo "amphetamine"
 echo "day one"
-
 echo ""
 echo "****************************"
 echo ""
