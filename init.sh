@@ -222,6 +222,10 @@ brew cask install zoom
 
 brew cask install idagio
 
+brew cask install google-cloud-sdk
+brew install kubectl
+brew install bash-completion@2
+
 echo ""
 echo "****************************"
 echo "NO INSTALLS FOR"
