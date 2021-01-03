@@ -98,11 +98,13 @@ brew install node
 echo '*** install openssl ***'
 brew install openssl
 
-#echo '*** install postgresql ***'
-#brew install postgresql
+echo '*** install postgresql ***'
+brew install postgresql
+# brew install postgresql@9.6
+# brew install geos gdal
 
 #echo '*** set postgresql to run at startup ***'
-#brew services start postgresql
+brew services start postgresql
 
 echo '*** install redis ***'
 brew install redis
@@ -124,6 +126,13 @@ brew install tree
 
 echo '*** install wget ***'
 brew install wget
+
+echo '*** install imagemagick ***'
+brew install imagemagick
+
+brew install truncate
+brew install git-when-merged
+brew install markdown
 
 echo '*** change default cask install location to ~/Applications ***'
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -183,6 +192,9 @@ brew cask install postman
 echo '*** install meld ***'
 brew cask install meld
 
+echo '*** install tableplus ***'
+brew cask install tableplus
+
 
 #echo '*** install skype ***'
 #brew cask install skype
@@ -197,6 +209,25 @@ echo '*** install sublime text 3 ***'
 brew tap caskroom/versions
 brew cask install sublime-text
 
+brew cask install sublime-merge
+
+brew cask install amazon-music
+
+brew cask install envkey
+
+brew cask install zoom
+
+echo ""
+echo "****************************"
+echo "NO INSTALLS FOR"
+echo ""
+echo "todoist"
+echo "amphetamine"
+echo "day one"
+
+echo ""
+echo "****************************"
+echo ""
 echo '*** cleaning up cask installs ***'
 brew cask cleanup
 
@@ -396,7 +427,7 @@ echo '*** open sublime to initialize filepaths ***'
 subl
 
 # set vim as default text editor in git
-echo '*** set vim as default text editor in git ***'
+echo '*** set sublime text as default text editor in git ***'
 git config --global core.editor subl -nw
 
 #set sublime as default text editor os-wide
@@ -461,3 +492,7 @@ curl -# https://raw.githubusercontent.com/denishaskin/env-init/master/assets/gen
 # todoist
 # remap Control-Shift-Down to not be Mission Control, or whatever it is
 # My .gitconfig changes
+# pex
+# sublime text packages
+# sublime text snippets
+# dbvisualizer configuration
