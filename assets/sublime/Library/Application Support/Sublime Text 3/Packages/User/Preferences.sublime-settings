@@ -1,0 +1,54 @@
+{
+	"color_scheme": "Packages/Theme - Solarized Flat/Solarized Flat Light.tmTheme",
+	"ensure_newline_at_eof_on_save": false,
+	"file_exclude_patterns":
+	[
+		"public/javascripts/translations.js",
+		".byebug_history"
+	],
+	"find_selected_text": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules",
+		".tmp",
+		"tmp",
+		"dist",
+		"platforms",
+		"bower_components",
+		"dumps",
+		"lcov-report",
+		"styling",
+		"vendor",
+		"coverage",
+		"public/packs",
+		"public/packs-test",
+		"log",
+		"doc",
+		".yardoc",
+		"test/reports"
+	],
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"CoffeeScript",
+		"JavaScript",
+		"LaTeX",
+		"Markdown",
+		"Vintage"
+	],
+	"rulers":
+	[
+		132
+	],
+	"tab_size": 2,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true,
+	"wrap_width": 132
+}

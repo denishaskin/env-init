@@ -1,0 +1,42 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+		"CoffeeScript"
+	],
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"Babel",
+		"Better Bookmarks",
+		"Better CoffeeScript",
+		"BracketHighlighter",
+		"Ciapre Color Scheme",
+		"CoffeeScript",
+		"Elixir",
+		"EmberScript",
+		"Frontend Light Color Scheme",
+		"Git",
+		"GitGutter",
+		"GitHubinator",
+		"Handlebars",
+		"Harper Color Scheme",
+		"HTML-CSS-JS Prettify",
+		"HTMLAttributes",
+		"JavaScriptNext - ES6 Syntax",
+		"JSX",
+		"Package Control",
+		"Predawn",
+		"React Templates",
+		"Ruby Slim",
+		"Sass",
+		"SideBarEnhancements",
+		"Solarized Color Scheme",
+		"SqlBeautifier",
+		"SyncedSideBar",
+		"TabsExtra",
+		"Theme - Solarized Flat",
+		"TypeScript",
+		"Vintage Surround"
+	]
+}
