@@ -71,7 +71,8 @@ fi
 ##############################
 
 echo '*** install homebrew ***'
-ruby -e "$(curl -#fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# TODO Do we still need this?
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 
 #echo '*** install erlang ***'
@@ -137,94 +138,92 @@ brew install markdown
 echo '*** install hub` ***'
 brew install hub
 
-echo '*** change default cask install location to ~/Applications ***'
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
 echo '*** install 1password ***'
-brew cask install 1password
+brew install 1password
 
 echo '*** install alfred ***'
-brew cask install alfred
+brew install alfred
 
 echo '*** install anvil ***'
-brew cask install anvil
+brew install anvil
 
 echo '*** install charles ***'
-brew cask install charles
+brew install charles
 
 echo '*** install dash ***'
-brew cask install dash
+brew install dash
 
 echo '*** install google chrome ***'
-brew cask install google-chrome
+brew install google-chrome
 
 # echo '*** install flux ***'
-# brew cask install flux
+# brew install flux
 
 # echo '*** install iterm2 ***'
-# brew cask install iterm2
+# brew install iterm2
 
 # echo '*** install mou ***'
-# brew cask install mou
+# brew install mou
 
 echo '*** install slack ***'
-brew cask install slack
+brew install slack
 
 echo '*** install sketchup ***'
-brew cask install sketchup
+brew install sketchup
 
 echo '*** install evernote ***'
-brew cask install evernote
+brew install evernote
 
 echo '*** install skitch ***'
-brew cask install skitch
+brew install skitch
 
 echo '*** install transmission ***'
-brew cask install transmission
+brew install transmission
 
 echo '*** install plex ***'
-brew cask install plex-media-server
-brew cask install plex-media-player
+brew install plex-media-server
+brew install plex-media-player
 
 echo '*** install harvest ***'
-brew cask install harvest
+brew install harvest
 
 echo '*** install postman ***'
-brew cask install postman
+brew install postman
 
 # echo '*** install meld ***'
-# brew cask install meld
+# brew install meld
 
 echo '*** install tableplus ***'
-brew cask install tableplus
+brew install tableplus
 
 
 #echo '*** install skype ***'
-#brew cask install skype
+#brew install skype
 
 # echo '*** install synergy ***'
-# brew cask install synergy
+# brew install synergy
 
 # echo '*** install vlc ***'
-# brew cask install vlc
+# brew install vlc
 
 echo '*** install sublime text 3 ***'
-# brew tap caskroom/versions
-brew cask install sublime-text
+brew install sublime-text
 
-brew cask install sublime-merge
+brew install sublime-merge
 
-brew cask install amazon-music
+brew install amazon-music
 
-brew cask install envkey
+brew install envkey
 
-brew cask install zoom
+brew install zoom
 
-brew cask install idagio
+brew install idagio
 
-brew cask install google-cloud-sdk
+brew install google-cloud-sdk
 brew install kubectl
 brew install bash-completion@2
+
+brew install jsonpp
 
 echo ""
 echo "****************************"
@@ -236,8 +235,6 @@ echo "day one"
 echo ""
 echo "****************************"
 echo ""
-echo '*** cleaning up cask installs ***'
-brew cask cleanup
 
 
 
